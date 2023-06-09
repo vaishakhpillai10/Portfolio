@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: black;
+        }
+        /* .container{
+            background-color: bisque;
+            color: rgb(9, 6, 167);
+            display: grid;
+           place-items: center;
+           height: 100vh;
+        } */
+        /* .form-container{
+            height: auto;
+        } */
+        /* .container2{
+            background-color: rgb(200, 228, 182);
+            color: rgb(201, 37, 59);
+            display: flexbox;
+           place-items:center;
+           height:auto;
+        } */
+        .card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+    </style>
+</head>
+<body>
+    
+    <div class="card" style=" width: 18rem;background-color: rgb(215, 230, 225);">
+       <h1>PROFILE</h1>
+        {% block content %}
+            {% for p in portfolio %}
+                <img class="card-img-top" src="{{p.image}}" alt=" ">
+            {% endfor %}
+        <div class="card-body">
+            <div class="card-title">
+                    {% for p in portfolio %}
+                        <h1 style="color: rgb(121, 39, 177);">{{p.name}}</h1>
+                    {% endfor %}
+              
+            </div>
+            <div class="card-text">
+                
+                    {% for x in portfolio %}
+                        <!-- <h1>{{x.name}}</h1> -->
+                       <b> Objective:</b>  {{x.objective}} <br>
+                        <b>Address: </b> {{x.address}} <br>
+                       <b> Contact:</b>  {{x.contact}} <br>
+                       <b> Skills:</b>  {{x.Skills}} <br>
+                        
+                    {% endfor %}
+                {% endblock %}
+
+        </div>
+
+    </div>
+
+    </body>
+</html>
+
+
